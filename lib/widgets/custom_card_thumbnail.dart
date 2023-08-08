@@ -12,7 +12,7 @@ class CustomCardThumbnail extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: kButtonColor.withOpacity(0.25),
+            color: AppColors.kButtonColor.withOpacity(0.25),
             blurRadius: 5,
             spreadRadius: 1,
             offset: const Offset(0, 3),

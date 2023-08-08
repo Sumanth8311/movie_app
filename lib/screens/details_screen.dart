@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/utils/app_styles.dart';
 import 'package:movie_app/utils/colors.dart';
 import 'package:readmore/readmore.dart';
 
@@ -18,7 +19,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      backgroundColor: AppColors.kBackgroundColor,
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -29,7 +30,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     borderRadius: BorderRadius.circular(18),
                     gradient: LinearGradient(
                       colors: [
-                        kBackgroundColor.withOpacity(0.8),
+                        AppColors.kBackgroundColor.withOpacity(0.8),
                         Colors.transparent,
                       ],
                       begin: Alignment.bottomCenter,
@@ -130,8 +131,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           "Lorem ispum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid, ",
                           trimLines: 3,
                           trimMode: TrimMode.Line,
-                          moreStyle: TextStyle(color: kButtonColor),
-                          lessStyle: TextStyle(color: kButtonColor),
+                          moreStyle:
+                              TextStyle(color: AppColors.kBackgroundColor),
+                          lessStyle:
+                              TextStyle(color: AppColors.kBackgroundColor),
                           style: TextStyle(
                             color: Colors.white70,
                             height: 1.5,
@@ -147,11 +150,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               "Trailer",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
+                              style: AppStyles.textSize20(
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -180,7 +181,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                   ),
                                   child: Icon(
                                     FontAwesomeIcons.play,
-                                    color: kButtonColor.withOpacity(0.8),
+                                    color:
+                                        AppColors.kButtonColor.withOpacity(0.8),
                                     size: 20,
                                   ),
                                 ),
@@ -200,20 +202,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Comments",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                                  style: AppStyles.textSize20(
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
                                 Text(
                                   "See all",
-                                  style: TextStyle(
-                                    color: kButtonColor,
-                                    fontSize: 18,
+                                  style: AppStyles.textSize20(
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -239,15 +237,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Container(
-                color: kButtonColor,
+                color: AppColors.kBackgroundColor,
                 alignment: Alignment.center,
                 height: 68,
-                child: const Text(
+                child: Text(
                   "Watch Movie",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                  style: AppStyles.textSize20(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -265,7 +262,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         horizontal: 20,
       ),
       decoration: BoxDecoration(
-        color: kSearchbarColor,
+        color: AppColors.kSearchbarColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Text(
@@ -290,7 +287,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             width: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: kSearchbarColor,
+              color: AppColors.kBackgroundColor,
             ),
             margin: const EdgeInsets.only(right: 15),
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),

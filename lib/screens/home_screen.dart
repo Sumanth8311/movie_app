@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app/utils/colors.dart';
 
 import '../data/movie.dart';
+import '../utils/app_styles.dart';
 import '../widgets/custom_card_normal.dart';
 import '../widgets/custom_card_thumbnail.dart';
 
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      backgroundColor: AppColors.kBackgroundColor,
       body: Stack(
         children: [
           SafeArea(
@@ -79,9 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           "Hi, Melanie!",
-                          style: TextStyle(color: Colors.white, fontSize: 30),
+                          style: AppStyles.textSize30(),
                         ),
                         Stack(
                           children: [
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: kSearchbarColor,
+                        color: AppColors.kSearchbarColor,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
@@ -120,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(width: 20),
                           Text(
                             "Search",
-                            style: TextStyle(fontSize: 18, color: Colors.white),
+                            style: AppStyles.textSize18(),
                           ),
                         ],
                       ),
@@ -129,16 +130,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                    child: Text(
-                      "For you",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
+                    child: Text("For you",
+                        style: AppStyles.textSize18(
+                          fontWeight: FontWeight.w300,
+                        )),
                   ),
                   foryoucardslayout(forYouImages),
                   Align(
@@ -146,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: kSearchbarColor,
+                        color: AppColors.kSearchbarColor,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
@@ -162,21 +159,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text(
-                              "Popular",
-                              style: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
+                          children: [
+                            Text("Popular",
+                                style: AppStyles.textSize20(
+                                  fontWeight: FontWeight.w400,
+                                )),
                             Text(
                               "See all",
-                              style: TextStyle(
-                                color: kButtonColor,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w300,
+                              style: AppStyles.textSize17(
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ],
@@ -192,20 +183,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "Genres",
-                              style: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
+                              style: AppStyles.textSize20(
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             Text(
                               "See all",
-                              style: TextStyle(
-                                color: kButtonColor,
-                                fontSize: 17,
+                              style: AppStyles.textSize17(
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -222,20 +209,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
                               "Legendary Movies",
-                              style: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 20,
+                              style: AppStyles.textSize20(
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
                             Text(
                               "See all",
-                              style: TextStyle(
-                                color: kButtonColor,
-                                fontSize: 17,
+                              style: AppStyles.textSize17(
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -290,7 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   sigmaY: 25.0,
                 ),
                 child: Container(
-                  color: kSearchbarColor.withOpacity(0.6),
+                  color: AppColors.kSearchbarColor.withOpacity(0.6),
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
